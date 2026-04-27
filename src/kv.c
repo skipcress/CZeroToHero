@@ -5,7 +5,7 @@
 
 #define DEAD 0x1
 
-size_t hash(char *key, size_t capacity) {
+size_t hash(const char *key, size_t capacity) {
 	size_t hash = 0x123456789;
 	while(*key) {
 		hash ^= *key;
