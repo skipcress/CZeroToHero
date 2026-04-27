@@ -18,6 +18,6 @@ kv_t *kv_init(size_t capacity);
 
 void kv_free(kv_t *table);
 
-int kv_put(kv_t *table, char *key, char *value);
+int kv_put(kv_t *table, const char *key, const char *value);
 
 #endif
