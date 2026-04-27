@@ -49,7 +49,7 @@ void kv_free(kv_t *table) {
 
 // Returns index of the key, otherwise -1
 int kv_put(kv_t *table, char *key, char *value) {
-	if(!key || !value) {
+	if(!table || !key || !value) {
 		return -1;
 	}
 
