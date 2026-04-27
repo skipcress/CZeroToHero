@@ -53,8 +53,8 @@ int kv_put(kv_t *table, const char *key, const char *value) {
 		return -1;
 	}
 
-	size_t index = hash(key, table->capacity);
-	size_t walking_index;
+	int index = hash(key, table->capacity);
+	int walking_index;
 
 	for(int i = 0; i < table-> capacity; i++) {
 		walking_index = (index + i) % table->capacity;
@@ -71,7 +71,7 @@ int kv_put(kv_t *table, const char *key, const char *value) {
 
 			entry->value = newVal;
 
-			return (int)walking_index;
+			return walking_index;
 		}
 
 		if(!entry->key || entry->key == (void*)DEAD) {
@@ -90,7 +90,7 @@ int kv_put(kv_t *table, const char *key, const char *value) {
 
 			table->count++;
 
-			return (int)walking_index;
+			return walking_index;
 		}
 	}
 
